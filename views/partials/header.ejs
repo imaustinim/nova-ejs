@@ -9,10 +9,31 @@
 </head>
 <body>
   <nav>
-    <a href="/performers/new"	<%- title === 'Add Performer' ? 'class="active"' : '' %>>
-		ADD PERFORMER</a>
-    <a href="/movies/new" <%- title === 'Add Movie' ? 'class="active"' : '' %>>ADD MOVIE</a>
-    <a href="/movies" <%- title === 'All Movies' ? 'class="active"' : '' %>>ALL MOVIES</a>
+    <div class="right-nav">
+      <a href="/u">USERS</a>
+      <a href="/p">PROJECTS</a>
+    </div>
   </nav>
   <main>
     <h1><%= title %></h1>
+    <div class="projects recommended">
+      <h2>RECOMMENDED</h2>
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
+    </div>
+    <div class="projects trending">
+      <h2>TRENDING</h2>
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
+    </div>
+    <div class="projects following">
+      <h2>FOLLOWING</h2>
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
+      <div>Project</div>
+    </div>
