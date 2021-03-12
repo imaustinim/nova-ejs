@@ -1,7 +1,6 @@
 const router = require("express").Router();
+const userCtrl = require("../controllers/user.controllers");
 
-router.get("/", (req, res) => {
-    console.log("Redirected to Users Page");
-});
+router.get("/", userCtrl.show);
 
 module.exports = router;

@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-
-const orderSchema = require("./order.model")
+const orderSchema = require("./schemas/order.model");
 
 const userSchema = new Schema({
     username: {
@@ -51,7 +50,7 @@ const userSchema = new Schema({
     },
     orders: [orderSchema]
 }, {
-    timestamps = true,
+    timestamps: true,
 });
 
 module.exports = mongoose.model("User", userSchema)

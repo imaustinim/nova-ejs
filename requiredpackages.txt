@@ -1,0 +1,5 @@
+__
+mongoose
+Passport
+Express-session
+Passport-google-oauth

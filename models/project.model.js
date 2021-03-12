@@ -1,5 +1,5 @@
 const mongoose = require("mongoose");
-const genreSchema = require("./other/genres.model");
+const genreSchema = require("./schemas/genres.model");
 const Schema = mongoose.Schema;
 
 const projectSchema = new Schema({
