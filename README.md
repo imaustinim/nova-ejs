@@ -51,36 +51,42 @@ Nova is a platform where artists connect raise equity and capital. With the rise
             - Stats
             
 --- 
+
 <br>
 
 ## ERD
 ![ERD](public/images/ERD.png)
 
 <br>
+
 --- 
 
 ## Flow Chart
 ![Flow Chart](public/images/flowchart.png)
 
 <br>
+
 --- 
 
 ## Home Page
 ![Home Page](public/images/homepage.png)
 
 <br>
+
 --- 
 
 ## Projects
 ![Projects Page](public/images/projectpage.png)
 
 <br>
+
 --- 
 
 ## User
 ![User Page](public/images/userpage.png)
 
 <br>
+
 ---
 
 ## Goals
@@ -96,3 +102,5 @@ Nova is a platform where artists connect raise equity and capital. With the rise
 7. Creating a user to user chatbox. *(5 hours)*
 8. Build dynamic algorithm for 'trending' projects. *(5 hours)*
 9. Allow users to embed social media. *(10 hours)*
+10. Add tags to projects and users. *(10 hours)*
+11. Add dynamic search function. *(20 hours)*
