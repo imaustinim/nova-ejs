@@ -4,7 +4,7 @@
 <br>
 
 ## Introduction
-Nova is a platform where artists can raise equity for future projects and also connect with other professionals. With the rise of alternative asset classes, Nova allows fans and investor to help change lives wth the potential of future returns. Unlike platforms such as gofundme, kickstarter, and indigogo, Nova provides an opportunity for users to reap what they sow.
+Nova is a platform where artists can raise equity for future projects and also connect with other professionals. With the rise of alternative asset classes, Nova allows fans and investors to help change lives with the potential of future returns. Unlike platforms such as gofundme, kickstarter, and indigogo, Nova provides an opportunity for users to reap what they sow.
 
 <br>
 
