@@ -1,15 +1,19 @@
-# NOVA
+# NOVA 
+### /ˈnōvə/ - borrowed from New Latin, "newly visible star" 
+
+<br>
 
 ## Introduction
 Nova is a platform where artists can raise equity for future projects and also connect with other professionals. With the rise of alternative asset classes, Nova allows fans and investor to help change lives wth the potential of future returns. Unlike platforms such as gofundme, kickstarter, and indigogo, Nova provides an opportunity for users to reap what they sow.
 
---- 
+<br>
 
 ## Technologies Used
 - Javascript, Node JS, Mongoose, MongoDB
 - EJS, HTML
 - CSS
---- 
+
+<br>
 
 ## Pseudo Code & System Design
 
@@ -95,12 +99,13 @@ Nova is a platform where artists can raise equity for future projects and also c
 3. Allow users to leave comments on other comments. *(5 hours)* 
 4. Use google login (OAuth). *(5 hours)*
 5. Create dynamic partial ejs pages. *(10 hours)*
---- 
 ### Total: 45 hours
 --- 
+## Additional Features
 6. Create order function using strip/paypal. *(10 hours)*
 7. Creating a user to user chatbox. *(5 hours)*
 8. Build dynamic algorithm for 'trending' projects. *(5 hours)*
 9. Allow users to embed social media. *(10 hours)*
 10. Add tags to projects and users. *(10 hours)*
 11. Add dynamic search function. *(20 hours)*
+### Total: 60 hours
