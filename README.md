@@ -114,11 +114,12 @@ Nova is a platform where artists can raise equity for future projects and also c
 
 ## FAQ
 
-***How accurate are the times to complete work***
-<\n>
+***How accurate are the times to complete work?***
+<br>
 Not accurate at all. Honestly I have no idea what I'm doing...
 
 ---
 
-***Is there a different collection for users that upload and investors***
-- Nope, similar to YouTube, you can upload videos while watching and leaving comments on others.
+***Is there a different collection for users that upload and investors?***
+<br>
+Nope, similar to YouTube, you can upload videos while watching and leaving comments on others.
