@@ -47,18 +47,28 @@ Nova is a platform where artists connect raise equity and capital. With the rise
             - link to spotify, instagram, fb, soundcloud, tiktok, etc.
             - Stats
 
-### ERD
-
+## ERD
 ![ERD](public/images/ERD.png)
 
-## WireFrame
+## Flow Chart
+![Flow Chart](public/images/flowchart.png)
 
-### Home Page
+## Home Page
 ![Home Page](public/images/homepage.png)
 
-### Projects
-
+## Projects
 ![Projects Page](public/images/projectpage.png)
 
-### User
+## User
 ![User Page](public/images/userpage.png)
+
+## Goals
+1. Create and manage database and routers effectively.
+2. Allow users to create projects.
+3. Allow users to leave comments on other comments.
+4. Use google login (OAuth).
+5. Create dynamic partial ejs pages. 
+-----------------------------------------------------
+6. Creating a user to user chatbox
+7. Build dynamic algorithm for 'trending' projects.
+8. Allow users to embed social media.
