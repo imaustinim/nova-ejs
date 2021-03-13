@@ -1,5 +1,11 @@
 __
+express 
 mongoose
-Passport
-Express-session
-Passport-google-oauth
+connect-mongo
+express-session
+dotenv
+method-override
+moment
+morgan
+passport
+passport-google-oaut 
