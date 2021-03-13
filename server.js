@@ -1,14 +1,19 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const session = require('express-session');
 
-var indexRouter = require('./routes/index.routes');
-var userRouter = require('./routes/user.routes');
-var projectRouter = require('./routes/project.routes');
+require('./config/database');
+require('./config/passport');
 
-var app = express();
+
+const indexRouter = require('./routes/index.routes');
+const userRouter = require('./routes/user.routes');
+const projectRouter = require('./routes/project.routes');
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -18,8 +23,18 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(session({
+  secret: 'SEIRocks!',
+  resave: false,
+  saveUninitialized: true
+}));
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(passport.initialize());
+app.use(passport.session());
 
+
+
+// Routes
 app.use('/', indexRouter);
 app.use('/u', userRouter);
 app.use('/p', projectRouter);
