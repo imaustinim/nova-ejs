@@ -1,25 +1,21 @@
 body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-a {
-  color: #00B7FF;
+    padding: 50px;
+    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 body {
-  background-color: slategray;
-  padding: 0;
-  margin: 0;
+    background-color: slategray !important;
+    padding: 0;
+    margin: 0;
 }
 
 /* Nav Bar CSS */
 header {
-  padding: 5px;
-  background-color: darkslategrey;
-  display: flex;
+    padding: 5px;
+    background-color: darkslategrey;
+    display: flex;
 }
 
 .header-right {
-  justify-content: right;
+    justify-content: right;
 }

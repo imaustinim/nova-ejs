@@ -11,7 +11,7 @@ Nova is a platform where artists can raise equity for future projects and also c
 ## Technologies Used
 - Javascript, Node JS, Mongoose, MongoDB
 - EJS, HTML
-- CSS
+- CSS, Bootstrap
 
 <br>
 

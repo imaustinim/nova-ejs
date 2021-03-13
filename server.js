@@ -25,6 +25,7 @@ app.listen(
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
+app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(logger('dev'));
 // app.use(express.json());
@@ -35,17 +36,18 @@ app.use(logger('dev'));
 //   resave: false,
 //   saveUninitialized: true
 // }));
-// app.use(express.static(path.join(__dirname, 'public')));
 
 const indexRouter = require('./routes/index.routes');
 const userRouter = require('./routes/user.routes');
 const projectRouter = require('./routes/project.routes');
-
+const loginRouter = require('./routes/login.routes');
 
 // Routes
 app.use('/', indexRouter);
 app.use('/u', userRouter);
 app.use('/p', projectRouter);
+app.use('/login', loginRouter);
+
 
 // catch 404 and forward to error handler
 // app.use(function(req, res, next) {
