@@ -109,3 +109,17 @@ Nova is a platform where artists can raise equity for future projects and also c
 10. Add tags to projects and users. *(10 hours)*
 11. Add dynamic search function. *(20 hours)*
 ### Total: 60 hours
+
+--- 
+
+## FAQ
+
+***How accurate are the times to complete work?***
+<br>
+Not accurate at all. Honestly I have no idea what I'm doing...
+
+---
+
+***Is there a different collection for users that upload and investors?***
+<br>
+Nope, similar to YouTube, you can upload videos while watching and leaving comments on others.
