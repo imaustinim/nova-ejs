@@ -28,8 +28,8 @@ app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use(logger('dev'));
-// app.use(express.json());
-// app.use(express.urlencoded({ extended: false }));
+app.use(express.json());
+app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
 // app.use(session({
 //   secret: 'SEIRocks!',
@@ -41,11 +41,16 @@ const indexRouter = require('./routes/index.routes');
 const userRouter = require('./routes/user.routes');
 const projectRouter = require('./routes/project.routes');
 const loginRouter = require('./routes/login.routes');
+const profileRouter = require('./routes/profile.routes');
+const searchRouter = require('./routes/search.routes');
+
 
 // Routes
 app.use('/', indexRouter);
 app.use('/u', userRouter);
 app.use('/p', projectRouter);
+app.use('/s', searchRouter);
+app.use('/profile', profileRouter);
 app.use('/login', loginRouter);
 
 

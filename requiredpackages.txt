@@ -9,3 +9,4 @@ moment
 morgan
 passport
 passport-google-oaut 
+bootstrap-icons
