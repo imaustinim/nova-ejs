@@ -1,21 +1,4 @@
-body {
-    padding: 50px;
-    font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
-}
-
-body {
-    background-color: slategray !important;
-    padding: 0;
-    margin: 0;
-}
-
 /* Nav Bar CSS */
-header {
-    padding: 5px;
-    background-color: darkslategrey;
-    display: flex;
-}
-
-.header-right {
-    justify-content: right;
+#search-input:hover {
+    background-color: unset !important;
 }

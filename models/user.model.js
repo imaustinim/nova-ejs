@@ -5,11 +5,23 @@ const orderSchema = require("./schemas/order.model");
 const userSchema = new Schema({
     username: {
         type: String,
-        required: true,
         unique: true,
         trim: true,
         minlength: 3
     },
+    loginId: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+    },
+    displayName: {
+        type: String,
+        required: true,
+        unique: true,
+        trim: true,
+        minlength: 3
+    },    
     firstName: {
         type: String,
         required: true,
@@ -24,29 +36,33 @@ const userSchema = new Schema({
         trim: true,
         minlength: 2
     },
+    locale: {
+        type: String,
+    },
+    profilePicture: {
+        type: String,
+    },
     birthDate: {
         type: Date,
         unique: false,
     },
     email: {
         type: String,
-        required: true,
         unique: true,
         trim: true,
     },
     phone: {
         type: String,
-        required: false,
         unique: false,
         trim: true
     },
     bio: {
         type: String,
-        required: false,
         unique: false,
         trim: false,
         minlength: 0,
     },
+
     orders: [orderSchema]
 }, {
     timestamps: true,

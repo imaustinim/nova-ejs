@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <link rel="stylesheet" href="stylesheets/style.css">
+  <title><%= title %></title>
+</head>
+<body >
+    
+    <header>
+        <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+            <div class="container-fluid">
+                <ul class="navbar-nav">
+                    <li>
+                        <a class="navbar-brand" href="/">NOVA</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav me-auto">
+                    <li>
+                        <a class="navbar-brand nav-link" href="/p">PROJECTS</a>
+                    </li>
+                    <li>
+                        <a class="navbar-brand nav-link" href="/u">USERS</a>
+                    </li>
+                </ul>
+                <form class="d-flex position-absolute translate-middle-x start-50" action="/s" method="POST" id="search-form"> 
+                    <input class="form-control py-1 btn-outline-secondary btn-dark text-light" type="search" placeholder="Search" aria-label="Search" name="query" id="search-input">
+                    <button class="btn btn-outline-secondary py-1" type="submit" arial-label="search" id="search-button">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 18 18">
+                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                        </svg>
+                    </button>
+                </form>
+                <ul class="navbar-nav ms-auto">
+                    <li>
+                        
+                    </li>
+                    <li>
+                        <div class="collapse navbar-collapse" id="navbarNavDarkDropdown">
+                            <ul class="navbar-nav">
+                                <li class="nav-item dropdown">
+                                    <a class="nav-link dropdown-toggle h1 py-0 my-0" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+                                    <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
+                                        <li><a class="dropdown-item" href="/profile">Profile</a></li>
+                                        <li><a class="dropdown-item" href="/p">My Projects</a></li>
+                                        <li><a class="dropdown-item" href="/settings">Settings</a></li>
+                                        <li><a class="dropdown-item" href="/auth/<%= loginStatus %>"><%= loginStatus %></a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>

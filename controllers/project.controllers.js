@@ -1,8 +1,10 @@
 const projectModel = require("../models/Project.model")
 
 function show(req, res) {
-    res.render("index", {
-        title: "Nova Homepage",
+    const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
+    res.render("project", {
+        title: "Projects Page",
+        loginStatus: loginStatus,
     });
 }
 

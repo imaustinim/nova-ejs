@@ -44,6 +44,11 @@ const projectSchema = new Schema({
 
         }
     },
+    status: {
+        type: String,
+        default: "private",
+        enum: ["private", "public"]
+    },
     genres: [genreSchema]
 }, {
     timestamps: true,
