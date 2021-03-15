@@ -1,4 +1,4 @@
-const userModel = require("../models/user.model")
+const userModel = require("../models/User.model")
 
 function show(req, res) {
     res.render("user", {

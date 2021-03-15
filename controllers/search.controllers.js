@@ -1,5 +1,5 @@
-const userModel = require("../models/user.model")
-const projectModel = require("../models/project.model")
+const userModel = require("../models/User.model")
+const projectModel = require("../models/Project.model")
 
 function show(req, res) {
     res.render("search", {

@@ -1,7 +1,7 @@
 const router = require("express").Router();
-const searchCtrl= require("../Controllers/search.controllers")
+const ctrl = require("../Controllers/search.controllers")
 
-router.post("/", searchCtrl.search);
+router.post("/",  ctrl.search);
 
 
 module.exports = router;

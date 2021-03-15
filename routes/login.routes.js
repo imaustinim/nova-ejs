@@ -1,6 +1,6 @@
 const router = require("express").Router();
-const loginCtrl= require("../Controllers/login.controllers")
+const ctrl = require("../Controllers/login.controllers")
 
-router.get("/", loginCtrl.show);
+router.get("/", ctrl.show);
 
 module.exports = router;

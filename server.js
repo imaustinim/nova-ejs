@@ -2,14 +2,19 @@ const createError = require('http-errors');
 const express = require('express');
 const dotenv = require("dotenv");
 const path = require('path');
+const passport = require("passport")
+const session = require('express-session');
 const connectDB = require("./config/database");
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const session = require('express-session');
 
 require('./config/passport');
 
+// Load config
 dotenv.config({ path: "./config/config.env"});
+
+// Passport config
+require("./config/passport")(passport);
 
 connectDB();
 
@@ -22,7 +27,18 @@ app.listen(
   console.log(`Server running mode in ${process.env.NODE_ENV} mode on port ${PORT}`)
 );
 
-// view engine setup
+// Session Middleware
+app.use(session({
+  secret: 'keyboard cat',
+  resave: false,
+  saveUninitialized: false,
+}));
+
+// Passport Middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+// static setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 app.use(express.static(path.join(__dirname, 'public')));
@@ -31,12 +47,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
-// app.use(session({
-//   secret: 'SEIRocks!',
-//   resave: false,
-//   saveUninitialized: true
-// }));
 
+
+const authRouter = require('./routes/auth.routes');
 const indexRouter = require('./routes/index.routes');
 const userRouter = require('./routes/user.routes');
 const projectRouter = require('./routes/project.routes');
@@ -45,7 +58,9 @@ const profileRouter = require('./routes/profile.routes');
 const searchRouter = require('./routes/search.routes');
 
 
+
 // Routes
+app.use('/auth', authRouter);
 app.use('/', indexRouter);
 app.use('/u', userRouter);
 app.use('/p', projectRouter);

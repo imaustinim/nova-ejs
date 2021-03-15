@@ -26,7 +26,6 @@ const userSchema = new Schema({
     },
     birthDate: {
         type: Date,
-        required: false,
         unique: false,
     },
     email: {

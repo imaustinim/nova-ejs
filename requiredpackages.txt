@@ -8,5 +8,5 @@ method-override
 moment
 morgan
 passport
-passport-google-oaut 
+passport-google-oauth20
 bootstrap-icons
