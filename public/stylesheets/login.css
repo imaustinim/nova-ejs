@@ -1,0 +1,41 @@
+#login-container {
+    width: 400px;
+    margin-top: 50px;
+    text-align: center;
+}
+
+#google,
+#facebook,
+#twitter,
+#twitch {
+    width: 220px;
+    color: white;
+    text-align: left;
+}
+
+#google {
+    border-color: #DB4437;
+    background-color: #DB4437;
+}
+
+#facebook {
+    background-color: #4267B2;
+    border-color: #4267B2;
+}
+
+#twitter {
+    background-color: #1DA1F2;
+    border-color: #1DA1F2;
+}
+
+#twitch {
+    background-color: #6441a5;
+    border-color: #6441a5;
+}
+
+#google:hover,
+#facebook:hover,
+#twitter:hover,
+#twitch:hover {
+    filter: brightness(90%);
+}
