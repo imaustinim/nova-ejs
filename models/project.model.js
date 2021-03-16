@@ -2,17 +2,17 @@ const mongoose = require("mongoose");
 const genreSchema = require("./schemas/genres.model");
 const Schema = mongoose.Schema;
 
-const projectSchema = new Schema({
-    authorId: {
-        type: Schema.Types.ObjectId,
-        ref: "User"
-    },
+const detailSchema = new Schema({
     title: {
         type: String,
         required: true,
         unique: true,
         trim: true,
         minlength: 1
+    },
+    authorId: {
+        type: Schema.Types.ObjectId,
+        ref: "User"
     },
     description: {
         type: String,
@@ -21,35 +21,64 @@ const projectSchema = new Schema({
         trim: false,
         minlength: 3
     },
-    details: {
-        amountRequired: {
-            type: Number,
-            required: true,
-            default: 0,
-        },
-        amountRaised: {
-            type: Number,
-            required: true,
-            default: 0,
-        },
-        numUsers: {
-            type: Number,
-            required: true,
-            default: 0
-        }
-    },
-    scores: {
-        trending: {
-            type: Number,
-
-        }
-    },
     status: {
         type: String,
         default: "private",
         enum: ["private", "public"]
     },
-    genres: [genreSchema]
+})
+
+const statSchema = new Schema({
+    novaScore: {
+        type: Number,
+        default: 0
+    },
+    trendScore: {
+        type: Number,
+        default: 0
+    },
+    numUsers: {
+        type: Number,
+        default: 0
+    },
+    like: {
+        type: Number,
+        default: 0
+    },
+    dislikes: {
+        type: Number,
+        default: 0
+    },
+    followers: {
+        type: Number,
+        default: 0
+    }
+
+})
+
+const contractSchema = new Schema({
+    amountRequired: {
+        type: Number,
+        required: true,
+        default: 0,
+    },
+    amountRaised: {
+        type: Number,
+        required: true,
+        default: 0,
+    },
+    returnRate: {
+        type: Number,
+        required: true,
+        default: 0.10,
+    }
+})
+
+const projectSchema = new Schema({
+    details: [detailSchema],
+    contract: [contractSchema],
+    genres: [genreSchema],
+    stats: [statSchema],
 }, {
     timestamps: true,
 });

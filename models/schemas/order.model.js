@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
-const orderSchema = new Schema({
+const OrderSchema = new Schema({
     projectId: {
         type: Schema.Types.ObjectId,
         ref: "Project",
@@ -54,4 +54,4 @@ const orderSchema = new Schema({
     timestamps: true
 });
 
-module.exports = orderSchema
+module.exports = OrderSchema

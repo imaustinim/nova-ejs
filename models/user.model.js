@@ -1,6 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const orderSchema = require("./schemas/order.model");
+const OrderSchema = require("./schemas/order.model");
+const SocialMediaSchema = require("./schemas/socialmedia.model")
 
 const userSchema = new Schema({
     username: {
@@ -62,8 +63,11 @@ const userSchema = new Schema({
         trim: false,
         minlength: 0,
     },
-
-    orders: [orderSchema]
+    socialMedia: [SocialMediaSchema],
+    orders: [OrderSchema],
+    projects: {
+        type: Schema.Types.ObjectId
+    },
 }, {
     timestamps: true,
 });

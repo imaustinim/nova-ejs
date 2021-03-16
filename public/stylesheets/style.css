@@ -2,3 +2,8 @@
 #search-input:hover {
     background-color: unset !important;
 }
+
+#create-project-icon:hover,
+#notifications-icon:hover {
+    filter: brightness(150%);
+}
