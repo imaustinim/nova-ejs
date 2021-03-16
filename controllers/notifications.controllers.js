@@ -1,9 +1,8 @@
-
 function show(req, res) {
     const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
     if (req.isAuthenticated()) {
-        res.render("profile/index", {
-            title: "Profile Page",
+        res.render("notifications/index", {
+            title: "Notifications Page",
             loginStatus: loginStatus,
         });        
     } else {

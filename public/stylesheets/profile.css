@@ -1,0 +1,43 @@
+#website-icon:hover,
+#github-icon:hover,
+#twitter-icon:hover,
+#instagram-icon:hover,
+#facebook-icon:hover,
+#youtube-icon:hover,
+#twitch-icon:hover,
+#linkedin-icon:hover {
+    filter: brightness(90%);
+}
+
+#website-icon {
+    color: black;
+}
+
+#github-icon {
+    color: #6e5494;
+}
+
+#twitter-icon {
+    color: #1DA1F2;
+}
+
+#instagram-icon {
+    color: #E1306C;
+}
+
+#facebook-icon {
+    color: #4267B2;
+}
+
+#youtube-icon {
+    color: #FF0000;
+}
+
+#twitch-icon {
+    color: #6441a5;
+}
+
+#linkedin-icon {
+    color: #2867B2;
+
+}

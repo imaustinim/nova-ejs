@@ -7,7 +7,7 @@ function redirect(req, res) {
 
 function login(req, res) {
     const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
-    res.render("login", {
+    res.render("auth/login", {
         title: "Login Page",
         loginStatus: loginStatus,
     });

@@ -5,6 +5,7 @@ const logger = require('morgan');
 const passport = require("passport")
 const session = require('express-session');
 const MongoDBStore = require("connect-mongodb-session")(session);
+// npm install connect-mongodb-session
 const connectDB = require("./config/database");
 
 // Load config
@@ -14,7 +15,6 @@ dotenv.config({ path: "./config/config.env"});
 require('./config/passport').google(passport);
 require('./config/passport').facebook(passport);
 require('./config/passport').twitch(passport);
-
 connectDB();
 
 const app = express();
@@ -54,16 +54,18 @@ app.use(express.urlencoded({ extended: false }));
 const indexRouter = require('./routes/index.routes');
 const authRouter = require('./routes/auth.routes');
 const userRouter = require('./routes/user.routes');
-const projectRouter = require('./routes/project.routes');
+const projectsRouter = require('./routes/projects.routes');
 const profileRouter = require('./routes/profile.routes');
 const searchRouter = require('./routes/search.routes');
+const notificationsRouter = require("./routes/notifications.routes");
 
 // Routes
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
 app.use('/u', userRouter);
-app.use('/p', projectRouter);
+app.use('/projects', projectsRouter);
 app.use('/s', searchRouter);
 app.use('/profile', profileRouter);
+app.use('/notifications', notificationsRouter);
 
 module.exports = app;

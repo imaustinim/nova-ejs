@@ -20,23 +20,25 @@
                 </ul>
                 <ul class="navbar-nav me-auto">
                     <li>
-                        <a class="navbar-brand nav-link" href="/p">PROJECTS</a>
+                        <a class="navbar-brand nav-link" href="/projects">PROJECTS</a>
                     </li>
                     <li>
                         <a class="navbar-brand nav-link" href="/u">USERS</a>
                     </li>
                 </ul>
                 <form class="d-flex position-absolute translate-middle-x start-50" action="/s" method="POST" id="search-form"> 
-                    <input class="form-control py-1 btn-outline-secondary btn-dark text-light" type="search" placeholder="Search" aria-label="Search" name="query" id="search-input">
-                    <button class="btn btn-outline-secondary py-1" type="submit" arial-label="search" id="search-button">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="36" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 18 18">
-                            <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
-                        </svg>
-                    </button>
+                    <div class="input-group">
+                        <input class="form-control py-1 btn-outline-secondary btn-dark text-light" type="search" placeholder="Search" aria-label="Search" name="query" id="search-input">
+                        <button class="btn btn-outline-secondary py-1" type="submit" arial-label="search" id="search-button">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="36" height="18" fill="currentColor" class="bi bi-search" viewBox="0 0 18 18" id="basic-addon2">
+                                <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/>
+                            </svg>
+                        </button>
+                    </div>
                 </form>
                 <ul class="navbar-nav ms-auto">
                     <li class="d-flex align-items-center">
-                        <a class="nav-link py-1 px-3 my-0 " href="projects/create">
+                        <a class="nav-link py-1 px-3 my-0 " href="/projects/create">
                             <title>Create Project</title>
                             <svg xmlns="http://www.w3.org/2000/svg" width="36" height="36" fill="grey" class="bi bi-plus py-0 my-0" viewBox="0 0 16 16" id="create-project-icon">
                                 <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z"/>
@@ -44,7 +46,7 @@
                         </a>
                     </li>
                     <li class="d-flex align-items-center">
-                        <a class="nav-link py-1 px-3 my-0 " href="notifications" title="hi">
+                        <a class="nav-link py-1 px-3 my-0 " href="/notifications" title="hi">
                         <svg role="img" xmlns="http://www.w3.org/2000/svg" width="36" height="24" fill="grey" class="bi bi-plus py-0 my-0" viewBox="0 0 16 16" id="notifications-icon">
                             <title>Notification</title>
                             <path d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zM8 1.918l-.797.161A4.002 4.002 0 0 0 4 6c0 .628-.134 2.197-.459 3.742-.16.767-.376 1.566-.663 2.258h10.244c-.287-.692-.502-1.49-.663-2.258C12.134 8.197 12 6.628 12 6a4.002 4.002 0 0 0-3.203-3.92L8 1.917zM14.22 12c.223.447.481.801.78 1H1c.299-.199.557-.553.78-1C2.68 10.2 3 6.88 3 6c0-2.42 1.72-4.44 4.005-4.901a1 1 0 1 1 1.99 0A5.002 5.002 0 0 1 13 6c0 .88.32 4.2 1.22 6z"/>

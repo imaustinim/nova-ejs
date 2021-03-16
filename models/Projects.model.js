@@ -1,31 +1,61 @@
 const mongoose = require("mongoose");
-const genreSchema = require("./schemas/genres.model");
 const Schema = mongoose.Schema;
+const genreSchema = require("./schemas/genres.model");
+const SocialMediaSchema = require("./schemas/socialmedia.model");
 
 const detailSchema = new Schema({
-    title: {
+    projectName: {
         type: String,
         required: true,
         unique: true,
         trim: true,
         minlength: 1
     },
+    projectType: {
+        type: String,
+        required: true,
+    },
+    authorName: {
+        type: String,
+        required: true,
+    },
     authorId: {
         type: Schema.Types.ObjectId,
+        required: true,
         ref: "User"
     },
     description: {
         type: String,
-        required: false,
         unique: false,
-        trim: false,
-        minlength: 3
+        trim: true,
     },
-    status: {
+    visibility: {
         type: String,
         default: "private",
         enum: ["private", "public"]
     },
+    releaseDate: {
+        type: Date,
+    },
+    genres: [genreSchema],
+})
+
+const contractSchema = new Schema({
+    capitalRequired: {
+        type: Number,
+        required: true,
+        default: 0,
+    },
+    capitalRaised: {
+        type: Number,
+        required: true,
+        default: 0,
+    },
+    returnRate: {
+        type: Number,
+        required: true,
+        default: 0.10,
+    }
 })
 
 const statSchema = new Schema({
@@ -53,34 +83,15 @@ const statSchema = new Schema({
         type: Number,
         default: 0
     }
-
 })
 
-const contractSchema = new Schema({
-    amountRequired: {
-        type: Number,
-        required: true,
-        default: 0,
-    },
-    amountRaised: {
-        type: Number,
-        required: true,
-        default: 0,
-    },
-    returnRate: {
-        type: Number,
-        required: true,
-        default: 0.10,
-    }
-})
-
-const projectSchema = new Schema({
+const projectsSchema = new Schema({
     details: [detailSchema],
     contract: [contractSchema],
-    genres: [genreSchema],
-    stats: [statSchema],
+    // socialMedia: [SocialMediaSchema],
+    // stats: [statSchema],
 }, {
     timestamps: true,
 });
 
-module.exports = mongoose.model("Project", projectSchema)
+module.exports = mongoose.model("Projects", projectsSchema)
