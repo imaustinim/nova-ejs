@@ -33,7 +33,7 @@ async function submitCreateForm(req, res) {
             authorId: req.user._id,
             description: req.body.description,
             visibility: req.body.status,
-            // genres: req.body.genres,
+            genres: req.body.genres.replace(/\s/g, '').split(","),
             releaseDate: req.body.releaseDate
         },
         contract: {
@@ -46,8 +46,7 @@ async function submitCreateForm(req, res) {
         // }        
     })
     
-    res.send(req.body, project)
-    
+    res.redirect(`/projects/${project._id}`);
             // title: "New Project",
             // loginStatus: loginStatus,
 }

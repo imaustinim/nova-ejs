@@ -37,7 +37,9 @@ const detailSchema = new Schema({
     releaseDate: {
         type: Date,
     },
-    genres: [genreSchema],
+    genres: {
+        type: Array,
+    }
 })
 
 const contractSchema = new Schema({

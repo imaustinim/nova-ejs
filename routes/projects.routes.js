@@ -5,5 +5,7 @@ router.get("/", projectsCtrl.show);
 router.get("/create", projectsCtrl.showCreateForm);
 router.post("/submit", projectsCtrl.submitCreateForm);
 
+router.get("/:id", projectsCtrl.show);
+
 
 module.exports = router;
