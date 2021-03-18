@@ -17,9 +17,8 @@ async function show(req, res) {
 }
 
 async function setup(req, res) {
+    await console.log(req.user.createdAt)
     if (req.isAuthenticated()) {
-        console.log(req.params)
-        console.log(req.user)
         await res.render("profile/setup", {
             title: "Setup Page",
             loginStatus: "Logout",
