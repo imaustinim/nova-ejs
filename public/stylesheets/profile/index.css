@@ -1,11 +1,9 @@
-#website-icon:hover,
-#github-icon:hover,
-#twitter-icon:hover,
-#instagram-icon:hover,
-#facebook-icon:hover,
-#youtube-icon:hover,
-#twitch-icon:hover,
-#linkedin-icon:hover {
+.icon {
+    border: none;
+    padding: 0 5px;
+}
+
+.icon:hover {
     filter: brightness(90%);
 }
 

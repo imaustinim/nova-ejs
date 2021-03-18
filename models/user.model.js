@@ -38,7 +38,7 @@ const detailsSchema = new Schema({
     profilePicture: {
         type: String,
     },
-    locale: {
+    location: {
         type: String,
         trim: true,
     },
@@ -54,7 +54,7 @@ const detailsSchema = new Schema({
 
 const userSchema = new Schema({
     details: detailsSchema,
-    socialMedia: [SocialMediaSchema],
+    socialMedia: SocialMediaSchema,
     orders: [OrderSchema],
     projects: [{
         type: Schema.Types.ObjectId

@@ -16,3 +16,44 @@
 .edit-trigger:hover>.edit {
     visibility: visible;
 }
+
+.socialmedia-list * {
+    background-color: white;
+}
+
+.socialmedia-list>li>div>* {
+    border: none;
+}
+
+#website-icon {
+    color: black;
+}
+
+#twitter-icon {
+    color: #1DA1F2;
+}
+
+#instagram-icon {
+    color: #E1306C;
+}
+
+#facebook-icon {
+    color: #4267B2;
+}
+
+#youtube-icon {
+    color: #FF0000;
+}
+
+#twitch-icon {
+    color: #6441a5;
+}
+
+#linkedin-icon {
+    color: #2867B2;
+
+}
+
+#github-icon {
+    color: #6e5494;
+}

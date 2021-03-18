@@ -13,12 +13,22 @@ function google(passport) {
     },
     async (accessToken, refreshToken, profile, callback) => {
         const newUser = {
-            loginId: profile.id,
-            displayName: profile.displayName,
-            firstName: profile.name.givenName,
-            lastName: profile.name.familyName,
-            profilePicture: profile.photos[0].value,
-            locale: profile.locale,
+            details: {
+                firstName: profile.name.givenName,
+                lastName: profile.name.familyName,
+                displayName: profile.displayName,
+                profilePicture: profile.photos[0].value,
+            },
+            socialMedia: {
+                twitter: "",
+                instagram: "",
+                facebook: "",
+                youtube: "",
+                twitch: "",
+                linkedin: "",
+                github: "",
+                personal: ""
+            }
         }
 
         try {

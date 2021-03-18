@@ -2,29 +2,39 @@ const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const SocialMediaSchema = new Schema({
-    platform: {
+    // platform: {
+    //     type: String,
+    //     enum: ["Facebook", "Instagram", "Github", "Website", "Twitter", "Twitch", "Other"],
+    //     required: true,
+    // },
+    twitter: {
         type: String,
-        enum: ["Facebook", "Instagram", "Github", "Website", "Twitter", "Twitch", "Other"],
-        required: true,
     },
-    url: {
+    instagram: {
         type: String,
-        required: true,
     },
-    id: {
+    facebook: {
         type: String,
-        required: true
     },
-    style: {
-        svg: {
-            type: String,
-            required: true,
-        },
-        iconId: {
-            type: String,
-            required: true,
-        }
+    youtube: {
+        type: String,
+    },
+    twitch: {
+        type: String,
+    },
+    linkedin: {
+        type: String,
+    },
+    github: {
+        type: String,
+    },
+    personal: {
+        type: String,
     }
+    // id: {
+    //     type: String,
+    //     required: true
+    // },
 })
 
 module.exports = SocialMediaSchema
