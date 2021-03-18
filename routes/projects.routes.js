@@ -1,11 +1,10 @@
 const router = require("express").Router();
-const projectsCtrl = require("../Controllers/projects.controllers")
+const projectsCtrl = require("../Controllers/projects.controllers");
+const upload = require("./upload");
 
 router.get("/", projectsCtrl.show);
 router.get("/create", projectsCtrl.showCreateForm);
-router.post("/submit", projectsCtrl.submitCreateForm);
-
-router.get("/:id", projectsCtrl.show);
-
+router.post("/submit", upload.single("image"), projectsCtrl.submitCreateForm);
+router.get("/:id", projectsCtrl.showProject);
 
 module.exports = router;

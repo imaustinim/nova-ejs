@@ -1,13 +1,15 @@
 const ProjectsModel = require("../models/Projects.model")
+const multer = require("multer");
 
-function show(req, res) {
+async function show(req, res) {
     const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
+    const projects = await ProjectsModel.find();
     res.render("projects/index", {
         title: "Projects Page",
         loginStatus: loginStatus,
+        projects: projects
     });
 }
-
 
 function showCreateForm(req, res) {
     const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
@@ -22,9 +24,7 @@ function showCreateForm(req, res) {
 }
 
 async function submitCreateForm(req, res) {
-    console.log();
     if (!req.isAuthenticated()) res.redirect("/auth/login");
-    const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
     const project = await ProjectsModel.create({
         details: {
             projectName: req.body.projectName,
@@ -33,8 +33,9 @@ async function submitCreateForm(req, res) {
             authorId: req.user._id,
             description: req.body.description,
             visibility: req.body.status,
-            genres: req.body.genres.replace(/\s/g, '').split(","),
-            releaseDate: req.body.releaseDate
+            releaseDate: req.body.releaseDate,
+            genres: req.body.genres.replace("/,\s/g", ',').split(","),
+            media: req.image
         },
         contract: {
             capitalRequired: req.body.capitalRequired,
@@ -45,8 +46,20 @@ async function submitCreateForm(req, res) {
 
         // }        
     })
-    
     res.redirect(`/projects/${project._id}`);
+            // title: "New Project",
+            // loginStatus: loginStatus,
+}
+
+async function showProject(req, res) {
+    const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
+    const project = await ProjectsModel.findById(req.params.id);
+    res.render("projects/project", {
+        title: project.projectName,
+        loginStatus: loginStatus,
+        project: project,
+        investStatus: (Date.parse(project.details.releaseDate) < Date.now()) ? "disabled" : "",
+    })
             // title: "New Project",
             // loginStatus: loginStatus,
 }
@@ -54,5 +67,6 @@ async function submitCreateForm(req, res) {
 module.exports = {
     show,
     showCreateForm,
-    submitCreateForm
+    submitCreateForm,
+    showProject,
   };

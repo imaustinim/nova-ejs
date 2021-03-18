@@ -1,8 +1,11 @@
 const passport = require("passport");
-const User = require("../models/User.model")
 
 function redirect(req, res) {
-    res.redirect("/");
+    if (req.user.username == null) {
+        res.redirect("/profile/edit/usernames");
+    } else {
+        res.redirect("/");
+    }
 }
 
 function login(req, res) {

@@ -41,3 +41,19 @@
     color: #2867B2;
 
 }
+
+.card-img-a,
+.card-img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.card-artist:hover,
+.card-genre:hover {
+    filter: brightness(50%);
+}
+
+.card-img:hover {
+    filter: brightness(90%);
+
+}

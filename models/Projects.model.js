@@ -7,7 +7,6 @@ const detailSchema = new Schema({
     projectName: {
         type: String,
         required: true,
-        unique: true,
         trim: true,
         minlength: 1
     },
@@ -26,7 +25,6 @@ const detailSchema = new Schema({
     },
     description: {
         type: String,
-        unique: false,
         trim: true,
     },
     visibility: {
@@ -38,6 +36,9 @@ const detailSchema = new Schema({
         type: Date,
     },
     genres: {
+        type: Array,
+    },
+    media: {
         type: Array,
     }
 })
@@ -87,9 +88,11 @@ const statSchema = new Schema({
     }
 })
 
+
+
 const projectsSchema = new Schema({
-    details: [detailSchema],
-    contract: [contractSchema],
+    details: detailSchema,
+    contract: contractSchema,
     // socialMedia: [SocialMediaSchema],
     // stats: [statSchema],
 }, {

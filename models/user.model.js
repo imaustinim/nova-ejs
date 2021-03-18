@@ -3,71 +3,62 @@ const Schema = mongoose.Schema;
 const OrderSchema = require("./schemas/order.model");
 const SocialMediaSchema = require("./schemas/socialmedia.model")
 
-const userSchema = new Schema({
-    username: {
-        type: String,
-        unique: true,
-        trim: true,
-        minlength: 3
-    },
-    loginId: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-    },
-    displayName: {
-        type: String,
-        required: true,
-        unique: true,
-        trim: true,
-        minlength: 3
-    },    
+const detailsSchema = new Schema({
     firstName: {
         type: String,
         required: true,
-        unique: false,
         trim: true,
         minlength: 2
     },
     lastName: {
         type: String,
         required: true,
-        unique: false,
         trim: true,
         minlength: 2
     },
-    locale: {
+    username: {
         type: String,
+        unique: true,
+        trim: true,
+        minlength: 1
+    },
+    displayName: {
+        type: String,
+        required: true,
+        trim: true,
+        minlength: 1
+    },
+    position: {
+        type: String,
+        trim: true,
+    },
+    genres: {
+        type: Array,
     },
     profilePicture: {
         type: String,
     },
-    birthDate: {
-        type: Date,
-        unique: false,
-    },
-    email: {
+    locale: {
         type: String,
-        unique: true,
         trim: true,
     },
-    phone: {
-        type: String,
-        unique: false,
-        trim: true
+    birthDate: {
+        type: Date,
     },
     bio: {
         type: String,
         unique: false,
         trim: false,
-        minlength: 0,
     },
+})
+
+const userSchema = new Schema({
+    details: detailsSchema,
     socialMedia: [SocialMediaSchema],
     orders: [OrderSchema],
-    projects: {
+    projects: [{
         type: Schema.Types.ObjectId
-    },
+    }],
 }, {
     timestamps: true,
 });

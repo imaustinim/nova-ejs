@@ -1,10 +1,12 @@
 const userModel = require("../models/User.model")
 
-function show(req, res) {
+async function show(req, res) {
     const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
-    res.render("user", {
-        title: "Nova Userpage",
+    const artists = await userModel.find();
+    res.render("artists/index", {
+        title: "Artists Page",
         loginStatus: loginStatus,
+        artists: artists
     });
 }
 

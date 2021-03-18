@@ -1,0 +1,69 @@
+<%- include('../partials/_header') %>
+<link rel="stylesheet" href="/stylesheets/project.css"/>
+<main>
+    <div class="container">
+        <div class="main-body">
+            <div class="row g-3">
+                <div class="col-md-12">
+                    <div class="card shadow-sm py-5 mt-3">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <h1>BANNER PHOTO</h1>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <img src="/images/projects/<%= project.details.media[0] %>" alt="Project thumbnail" class="rounded-circle" width="250">
+                                <div class="mt-3">
+                                    <h4><%= project.details.projectName %></h4>
+                                    <a class="h6"><%= project.details.authorName %></a>
+                                    <p class="text-secondary my-1">Genres: <%= project.details.genres.join(", ") %></p>
+                                    <div class="mt-3">
+                                        <button class="btn btn-primary">Follow</button>
+                                        <button class="btn btn-outline-primary">Message Author</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-center">
+                                <div class="mt-3">
+                                    <h4>Details</h4>
+                                    <p class="text-secondary mb-1">Capital Raised: $<%= project.contract.capitalRaised.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") %></p>
+                                    <p class="text-secondary mb-1">Capital Required: $<%= project.contract.capitalRequired.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",") %></p>
+                                    <p class="text-secondary mb-1">Release Date: <%= project.details.releaseDate.toISOString().split('T')[0] %></p>
+                                    <div class="mt-3">
+                                        <button class="btn btn-primary <%= investStatus %>">Invest</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-8">
+                    <div class="card shadow-sm mb-3">
+                        <div class="ratio ratio-16x9">
+                            <iframe class="embed-responsive-item" src="<%= project.details.videoUrl %>" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                    <div class="card shadow-sm mb-3">
+                        <div class="card-body">
+                            <div class="d-flex flex-column align-items-center text-left">
+                                <div>
+                                    <p class="text-secondary mb-1"><%= project.details.description %></p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+<%- include('../partials/_footer') %>

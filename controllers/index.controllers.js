@@ -1,10 +1,12 @@
-const mongoose = require("mongoose")
+const ProjectsModel = require("../models/Projects.model");
 
-function show(req, res) {
+async function show(req, res) {
     const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
-    res.render("index/index", {
-        title: "Nova Homepage",
+    const projects = await ProjectsModel.find();
+    res.render("projects/index", {
+        title: "Projects Page",
         loginStatus: loginStatus,
+        projects: projects
     });
 }
 

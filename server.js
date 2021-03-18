@@ -5,7 +5,6 @@ const logger = require('morgan');
 const passport = require("passport")
 const session = require('express-session');
 const MongoDBStore = require("connect-mongodb-session")(session);
-// npm install connect-mongodb-session
 const connectDB = require("./config/database");
 
 // Load config
@@ -50,7 +49,6 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 // app.use(cookieParser());
 
-
 const indexRouter = require('./routes/index.routes');
 const authRouter = require('./routes/auth.routes');
 const userRouter = require('./routes/user.routes');
@@ -62,7 +60,7 @@ const notificationsRouter = require("./routes/notifications.routes");
 // Routes
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/u', userRouter);
+app.use('/artists', userRouter);
 app.use('/projects', projectsRouter);
 app.use('/s', searchRouter);
 app.use('/profile', profileRouter);
