@@ -16,12 +16,11 @@ function google(passport) {
         let tempUsername = "";
         while (!unique) {
             tempUsername = Math.random().toString(36).substring(7);
-            if (UserModel.findOne({ details: {username: tempUsername}}) == null) unique = true;
+            if (await UserModel.findOne({ details: {username: tempUsername}}) == null) unique = true;
         }
-
         const newUser = {
+            loginId: profile.id,
             details: {
-                loginId: profile.id,
                 firstName: profile.name.givenName,
                 lastName: profile.name.familyName,
                 displayName: profile.displayName,
@@ -40,8 +39,7 @@ function google(passport) {
         }
 
         try {
-            let user = await UserModel.findOne({ details: { loginId: profile.id }})
-
+            let user = await UserModel.findOne({ loginId: profile.id })
             if(user) {
                 callback(null, user)
             } else {
@@ -79,11 +77,9 @@ function facebook(passport) {
                 unique = true;
             }
         }
-        console.log(tempUsername, profile.id)
-
         const newUser = {
+            loginId: profile.id,
             details: {
-                loginId: profile.id,
                 firstName: profile.name.givenName || profile.displayName.split(" ")[0],
                 lastName: profile.name.familyName || profile.displayName.split(" ")[profile.displayName.split(" ").length-1],
                 displayName: profile.displayName,
@@ -102,7 +98,8 @@ function facebook(passport) {
         }
 
         try {
-            let user = await UserModel.findOne({ details: { loginId: profile.id }})
+            let user = await UserModel.findOne({ loginId: profile.id })
+            console.log(user)
 
             if(user) {
                 callback(null, user)
@@ -152,6 +149,8 @@ function twitch(passport) {
                 callback(null, user)
             }
         } catch(err) {
+            callback(null, user)
+
             console.log(err)
         }
     }));

@@ -4,11 +4,6 @@ const OrderSchema = require("./schemas/order.model");
 const SocialMediaSchema = require("./schemas/socialmedia.model")
 
 const detailsSchema = new Schema({
-    loginId: {
-        type: String,
-        unique: true,
-        required: true
-    },
     firstName: {
         type: String,
         required: true,
@@ -58,6 +53,9 @@ const detailsSchema = new Schema({
 })
 
 const userSchema = new Schema({
+    loginId: {
+        type: String,
+    },
     details: detailsSchema,
     socialMedia: SocialMediaSchema,
     orders: [OrderSchema],

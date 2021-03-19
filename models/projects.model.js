@@ -91,8 +91,6 @@ const statSchema = new Schema({
     }
 })
 
-
-
 const projectsSchema = new Schema({
     details: detailSchema,
     contract: contractSchema,

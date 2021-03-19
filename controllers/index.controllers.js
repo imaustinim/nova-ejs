@@ -1,4 +1,5 @@
 const ProjectsModel = require("../models/projects.model");
+require("../models/projects.model")
 
 async function show(req, res) {
     let loginStatus = "Login";
