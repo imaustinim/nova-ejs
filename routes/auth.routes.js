@@ -23,4 +23,7 @@ router.get("/login", ctrl.login);
 
 // @desc    Logout User
 router.get("/logout", ctrl.logout);
+
+// @desc    Checks if logged in
+router.get("/user", ctrl.userProfile);
 module.exports = router;

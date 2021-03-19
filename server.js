@@ -53,17 +53,15 @@ const indexRouter = require('./routes/index.routes');
 const authRouter = require('./routes/auth.routes');
 const userRouter = require('./routes/user.routes');
 const projectsRouter = require('./routes/projects.routes');
-const profileRouter = require('./routes/profile.routes');
 const searchRouter = require('./routes/search.routes');
 const notificationsRouter = require("./routes/notifications.routes");
 
 // Routes
 app.use('/', indexRouter);
 app.use('/auth', authRouter);
-app.use('/artists', userRouter);
+app.use('/users', userRouter);
 app.use('/projects', projectsRouter);
 app.use('/s', searchRouter);
-app.use('/profile', profileRouter);
 app.use('/notifications', notificationsRouter);
 
 module.exports = app;

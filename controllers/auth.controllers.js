@@ -2,17 +2,16 @@ const passport = require("passport");
 
 function redirect(req, res) {
     if (req.user.username == null) {
-        res.redirect("/profile/edit/usernames");
+        res.redirect(`/users/${req.user._id}/edit`);
     } else {
         res.redirect("/");
     }
 }
 
 function login(req, res) {
-    const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
     res.render("auth/login", {
         title: "Login Page",
-        loginStatus: loginStatus,
+        loginStatus: "Login",
     });
 }
 
@@ -25,7 +24,15 @@ function ensureAuth(req, res, next) {
     if (req.isAuthenticated()) {
         return next();
     } else {
-        res.redirect("/");
+        res.redirect("/auth/login");
+    }
+}
+
+async function userProfile(req, res) {
+    if (req.isAuthenticated()) {
+        res.redirect(`/users/${req.user._id}`);
+    } else {
+        res.redirect("/auth/login")
     }
 }
 
@@ -34,4 +41,5 @@ module.exports = {
     login,
     logout,
     ensureAuth,
+    userProfile
   };

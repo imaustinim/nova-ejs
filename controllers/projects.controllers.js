@@ -7,7 +7,8 @@ async function show(req, res) {
     res.render("projects/index", {
         title: "Projects Page",
         loginStatus: loginStatus,
-        projects: projects
+        projects: projects,
+        user: req.user,
     });
 }
 
@@ -52,9 +53,19 @@ async function submitCreateForm(req, res) {
 }
 
 async function showProject(req, res) {
-    const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
+    let loginStatus = "Login"
+    let stylesheet = "/stylesheets/hidden.css";
+
     const project = await ProjectsModel.findById(req.params.id);
+    if (req.isAuthenticated()) {
+        loginStatus = "Logout";
+        if (project.details.authorId.toString() == req.user._id.toString()) {
+            stylesheet = "/stylesheets/projects/edit.css";
+        }
+    }
+
     res.render("projects/project", {
+        stylesheet: stylesheet,
         title: project.projectName,
         loginStatus: loginStatus,
         project: project,

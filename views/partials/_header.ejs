@@ -23,7 +23,7 @@
                         <a class="navbar-brand nav-link" href="/projects">PROJECTS</a>
                     </li>
                     <li>
-                        <a class="navbar-brand nav-link" href="/artists">ARTISTS</a>
+                        <a class="navbar-brand nav-link" href="/users">ARTISTS</a>
                     </li>
                 </ul>
                 <form class="d-flex position-absolute translate-middle-x start-50" action="/s" method="POST" id="search-form"> 
@@ -59,8 +59,7 @@
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle h1 py-0 px-4 my-0" id="navbarDarkDropdownMenuLink" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
                                     <ul class="dropdown-menu dropdown-menu-dark dropdown-menu-end" aria-labelledby="navbarDarkDropdownMenuLink">
-                                        <li><a class="dropdown-item" href="/profile">Profile</a></li>
-                                        <li><a class="dropdown-item" href="/p">My Projects</a></li>
+                                        <li><a class="dropdown-item" href="/auth/user">Profile</a></li>
                                         <li><a class="dropdown-item" href="/settings">Settings</a></li>
                                         <li><a class="dropdown-item" href="/auth/<%= loginStatus %>"><%= loginStatus %></a></li>
                                     </ul>

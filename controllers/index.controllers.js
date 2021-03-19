@@ -1,12 +1,14 @@
 const ProjectsModel = require("../models/Projects.model");
 
 async function show(req, res) {
-    const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
+    let loginStatus = "Login";
+    if (req.isAuthenticated()) loginStatus = "Logout";
     const projects = await ProjectsModel.find();
     res.render("projects/index", {
         title: "Projects Page",
         loginStatus: loginStatus,
-        projects: projects
+        projects: projects,
+        user : req.user,
     });
 }
 

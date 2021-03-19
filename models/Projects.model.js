@@ -40,6 +40,9 @@ const detailSchema = new Schema({
     },
     media: {
         type: Array,
+    },
+    videoUrl: {
+        type: String,
     }
 })
 
