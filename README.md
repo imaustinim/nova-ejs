@@ -15,49 +15,6 @@ Nova is a platform where artists can raise equity for future projects and also c
 
 <br>
 
-## Pseudo Code & System Design
-
-#### All Pages
-- Header
-    - Home
-    - Artists
-    - Projects
-    - Search
-    - Profile
-
-- Footer
-    - Disclaimer
-    - Copyright
-    - FAQ
-    - Contact
-    - Address
-
-### HomePage
-- Body
-    - Show youtube like components of:
-        - trending projects
-        - trending artists
-        - recommended for you
-        - following
-    - Show projects cards as index -> Artists page / details -> Invest
-    - Show stats -> Stats page with artists' successes
-
-### Artist's Page
-- Body
-    - Cards of index displaying the following: (Click to go into seperate page with longer bio and details)
-        - Introduction 
-        - Current Project 
-        - Amount Raised/Need
-        - Other details include:
-            - Bio
-            - Photo, gif, or video
-            - link to spotify, instagram, fb, soundcloud, tiktok, etc.
-            - Stats
-            
---- 
-
-<br>
-
 ## ERD
 ![ERD](public/images/ERD.png)
 
@@ -131,6 +88,7 @@ Nope, similar to YouTube, you can upload videos while watching and leaving comme
 3. I think a project like this is quite viable.
 
 ## Lessons Learned and what to work on.
+0. Create a damn wirefrime.
 1. I need to know more about databases and authentication.
 2. Focus on one thing at a time rather than just bouncing around.
 3. Front-end looks quite amateur.
@@ -138,7 +96,7 @@ Nope, similar to YouTube, you can upload videos while watching and leaving comme
 Overall, I'm pretty proud of my effort, not so much my execution but I don't think that matters at this point. 
 I know that if I continue put in effort into this project, it can be a legitimate platform, which I plan to do.
 
-## Still to fix
+## Still to Fix/Add
 - Fix user.details and project.details -> no need for a details section
 - Fix login functions
 - Add projects/:id/edit page
