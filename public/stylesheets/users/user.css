@@ -1,0 +1,57 @@
+.icon {
+    border: none;
+    padding: 0 5px;
+}
+
+.icon:hover {
+    filter: brightness(90%);
+}
+
+#website-icon {
+    color: black;
+}
+
+#github-icon {
+    color: #6e5494;
+}
+
+#twitter-icon {
+    color: #1DA1F2;
+}
+
+#instagram-icon {
+    color: #E1306C;
+}
+
+#facebook-icon {
+    color: #4267B2;
+}
+
+#youtube-icon {
+    color: #FF0000;
+}
+
+#twitch-icon {
+    color: #6441a5;
+}
+
+#linkedin-icon {
+    color: #2867B2;
+
+}
+
+.card-img-a,
+.card-img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.card-artist:hover,
+.card-genre:hover {
+    filter: brightness(50%);
+}
+
+.card-img:hover {
+    filter: brightness(90%);
+
+}

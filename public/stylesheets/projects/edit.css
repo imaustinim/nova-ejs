@@ -1,0 +1,10 @@
+.edit:hover {
+    visibility: visible !important;
+    filter: brightness(90%);
+}
+
+.edit>.btn {
+    opacity: 80%;
+    background-color: lightgray;
+    border-color: lightgray;
+}
