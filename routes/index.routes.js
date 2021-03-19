@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const ctrl = require("../Controllers/index.controllers")
+const ctrl = require("../controllers/index.controllers")
 
 router.get("/", ctrl.show);
 

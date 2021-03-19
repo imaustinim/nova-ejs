@@ -1,6 +1,6 @@
 const router = require("express").Router();
 const passport = require("passport");
-const ctrl = require("../Controllers/auth.controllers")
+const ctrl = require("../controllers/auth.controllers")
 
 // @desc    Authenticate with Google
 router.get("/google", passport.authenticate("google", { scope : ["profile"] }));

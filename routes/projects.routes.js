@@ -1,5 +1,5 @@
 const router = require("express").Router();
-const projectsCtrl = require("../Controllers/projects.controllers");
+const projectsCtrl = require("../controllers/projects.controllers");
 const upload = require("./upload");
 
 router.get("/", projectsCtrl.show);
