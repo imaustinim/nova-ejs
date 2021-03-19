@@ -1,4 +1,4 @@
-const ProjectsModel = require("../models/Projects.model")
+const ProjectsModel = require("../models/projects.model")
 const multer = require("multer");
 
 async function show(req, res) {

@@ -1,5 +1,5 @@
-const UserModel = require("../models/User.model")
-const ProjectsModel = require("../models/Projects.model")
+const UserModel = require("../models/user.model")
+const ProjectsModel = require("../models/projects.model")
 
 async function show(req, res) {
     const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
