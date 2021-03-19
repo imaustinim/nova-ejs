@@ -9,7 +9,6 @@ d.card-img-a,
     filter: brightness(50%);
 }
 
-.card,
 .card-img,
 .card-img-a {
     border: none;

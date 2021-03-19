@@ -1,7 +1,4 @@
 /* Nav Bar CSS */
-.card {
-    border: none
-}
 
 a {
     text-decoration: none;
@@ -14,4 +11,8 @@ a {
 #create-project-icon:hover,
 #notifications-icon:hover {
     filter: brightness(150%);
+}
+
+body {
+    background-color: whitesmoke;
 }
