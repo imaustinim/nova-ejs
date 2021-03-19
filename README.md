@@ -138,3 +138,17 @@ Nope, similar to YouTube, you can upload videos while watching and leaving comme
 Overall, I'm pretty proud of my effort, not so much my execution but I don't think that matters at this point. 
 I know that if I continue put in effort into this project, it can be a legitimate platform, which I plan to do.
 
+## Still to fix
+- Fix user.details and project.details -> no need for a details section
+- Fix login functions
+- Add projects/:id/edit page
+- Connect to cloud database to store images
+- Create function to parse youtube links to show embed properly
+- Create links on users/index page
+- Add function for edit photo and to properly place/edit it
+- Add sidenav (left)
+- Add function to save and display proper social media links
+- Add function to save
+- Add search function
+
+- Add payment function
