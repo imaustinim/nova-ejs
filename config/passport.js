@@ -3,7 +3,7 @@ const GoogleStrategy = require('passport-google-oauth').OAuth2Strategy;
 const FacebookStrategy = require("passport-facebook").Strategy;
 const TwitterStrategy = require("passport-twitter").Strategy;
 const TwitchStrategy = require("passport-twitch").OAuth2Strategy;
-const UserModel = require("../models/User.model")
+const UserModel = require("../models/user.model")
 
 function google(passport) {
     passport.use(new GoogleStrategy({
