@@ -1,0 +1,21 @@
+/* Nav Bar CSS */
+.card {
+    border: none
+}
+
+a {
+    text-decoration: none;
+}
+
+#search-input:hover {
+    background-color: unset !important;
+}
+
+#create-project-icon:hover,
+#notifications-icon:hover {
+    filter: brightness(150%);
+}
+
+body {
+    background-color: slategrey;
+}
