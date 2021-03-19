@@ -15,7 +15,3 @@ a {
 #notifications-icon:hover {
     filter: brightness(150%);
 }
-
-body {
-    background-color: slategrey;
-}

@@ -16,11 +16,11 @@ function google(passport) {
         let tempUsername = "";
         while (!unique) {
             tempUsername = Math.random().toString(36).substring(7);
-            if (await UserModel.findOne({ details: {username: tempUsername}}) == null) unique = true;
+            if (await UserModel.findOne( { details : { username: tempUsername }}) == null) unique = true;
         }
         const newUser = {
-            loginId: profile.id,
             details: {
+                loginId: profile.id,
                 firstName: profile.name.givenName,
                 lastName: profile.name.familyName,
                 displayName: profile.displayName,
@@ -69,47 +69,45 @@ function facebook(passport) {
         callbackURL: process.env.FACEBOOK_CALLBACK
     },
     async (accessToken, refreshToken, profile, callback) => {
-        let unique = false;
-        let tempUsername = "";
-        while (!unique) {
-            tempUsername = Math.random().toString(36).substring(7);
-            if (await UserModel.findOne({ details: {username: tempUsername}}) == null) {
-                unique = true;
-            }
-        }
-        const newUser = {
-            loginId: profile.id,
-            details: {
-                firstName: profile.name.givenName || profile.displayName.split(" ")[0],
-                lastName: profile.name.familyName || profile.displayName.split(" ")[profile.displayName.split(" ").length-1],
-                displayName: profile.displayName,
-                username: tempUsername
-            },
-            socialMedia: {
-                twitter: "",
-                instagram: "",
-                facebook: "",
-                youtube: "",
-                twitch: "",
-                linkedin: "",
-                github: "",
-                personal: ""
-            }
-        }
-
-        try {
-            let user = await UserModel.findOne({ loginId: profile.id })
-            console.log(user)
-
-            if(user) {
-                callback(null, user)
+        await UserModel.findOne({ details: { loginId: profile.id } }, (err, user) => {
+            if (err) return callback(err);
+            if (user) {
+                return callback(null, user);
             } else {
-                user = await UserModel.create(newUser)
-                callback(null, user)
+                let unique = false;
+                let tempUsername = "";
+                // while (!unique) {
+                    tempUsername = Math.random().toString(36).substring(7);
+                    // const check = UserModel.findOne({ username: tempUsername })
+                    // console.log(check)
+                    // if (check) unique = true;
+                    // }
+                // }
+                const newUser = new UserModel ({
+                    details: {
+                        loginId: profile.id,
+                        firstName: profile.name.givenName || profile.displayName.split(" ")[0],
+                        lastName: profile.name.familyName || profile.displayName.split(" ")[profile.displayName.split(" ").length-1],
+                        displayName: profile.displayName,
+                        username: tempUsername
+                    },
+                    socialMedia: {
+                        twitter: "",
+                        instagram: "",
+                        facebook: "",
+                        youtube: "",
+                        twitch: "",
+                        linkedin: "",
+                        github: "",
+                        personal: ""
+                    }
+                });
+                newUser.save((err) => {
+                    if (err) return callback;
+                    return callback(null, newUser)
+                })
             }
-        } catch(err) {
-            console.log(err)
-        }
+        })
     }));
     
     passport.serializeUser((user, callback) => {

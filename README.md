@@ -124,7 +124,7 @@ Not accurate at all. Honestly I have no idea what I'm doing...
 <br>
 Nope, similar to YouTube, you can upload videos while watching and leaving comments on others.
 
-# Reflectino
+# Reflection
 ## What I'm proud of
 1. I'm glad I was able to put a lot of effort in and reaffirm my drive for software engineering.
 2. I was able to try a lot of different things out and learn a lot. Specifically heroku and bootstrap.

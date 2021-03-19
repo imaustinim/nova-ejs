@@ -59,10 +59,7 @@ async function submitEdit(req, res) {
                 username: req.body.username,
                 message: "Username taken"
             })
-            console.log("this")
-
         } else {
-            console.log("this")
             const user = await UserModel.findByIdAndUpdate(req.user.id,{
                 details: {
                     firstName: req.body.firstName,
