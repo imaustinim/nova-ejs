@@ -1,4 +1,4 @@
-const ProjectsModel = require("../models/projects.model");
+const ProjectsModel = require("../models/projects.model.js");
 
 async function show(req, res) {
     let loginStatus = "Login";
