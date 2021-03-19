@@ -123,3 +123,18 @@ Not accurate at all. Honestly I have no idea what I'm doing...
 ***Is there a different collection for users that upload and investors?***
 <br>
 Nope, similar to YouTube, you can upload videos while watching and leaving comments on others.
+
+# Reflectino
+## What I'm proud of
+1. I'm glad I was able to put a lot of effort in and reaffirm my drive for software engineering.
+2. I was able to try a lot of different things out and learn a lot. Specifically heroku and bootstrap.
+3. I think a project like this is quite viable.
+
+## Lessons Learned and what to work on.
+1. I need to know more about databases and authentication.
+2. Focus on one thing at a time rather than just bouncing around.
+3. Front-end looks quite amateur.
+
+Overall, I'm pretty proud of my effort, not so much my execution but I don't think that matters at this point. 
+I know that if I continue put in effort into this project, it can be a legitimate platform, which I plan to do.
+
