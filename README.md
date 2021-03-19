@@ -149,6 +149,6 @@ I know that if I continue put in effort into this project, it can be a legitimat
 - Add sidenav (left)
 - Add function to save and display proper social media links
 - Add function to save
-- Add search function
+- Add search function (fuzzy search)
 
 - Add payment function
