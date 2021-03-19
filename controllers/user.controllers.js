@@ -36,55 +36,58 @@ async function showUser(req, res) {
     })
 }
 
-async function setup(req, res) {
-    if (req.isAuthenticated()) {
-        await res.render("profile/setup", {
-            title: "Setup Page",
-            loginStatus: "Logout",
-            user: req.user,
-        });        
-    } else {
-        res.redirect("/auth/login");
-    }
-}
-
-
 async function showEdit(req, res) {
     if (req.isAuthenticated()) {
         res.render("users/edit", {
             title: "Edit Profile",
             loginStatus: "Logout",
             user: req.user,
+            username: req.user.details.username,
+            message: ""
         })
     }
 }
 
 async function submitEdit(req, res) {
     if (req.isAuthenticated()) {
-        const user = await UserModel.findByIdAndUpdate(req.user._id,{
-            details: {
-                firstName: req.body.firstName,
-                lastName: req.body.lastName,
+        const userbyUsername = await UserModel.findOne({ details: { username: req.body.username }})
+        if (userbyUsername !== null && userbyUsername._id !== req.user.id) {
+            res.render("users/edit", {
+                title: "Edit Profile",
+                loginStatus: "Logout",
+                user: req.user,
                 username: req.body.username,
-                displayName: req.body.displayName,
-                position: req.body.position,
-                genres: req.body.genres.split(",").map(s => s.trim()),
-                location: req.body.location,
-                birthDate: req.body.birthdDate,
-                bio: req.body.bio,
-            },
-            socialMedia: {
-                twitter: req.body.twitter,
-                instagram: req.body.instagram,
-                facebook: req.body.facebook,
-                youtube: req.body.youtube,
-                twitch: req.body.twitch,
-                linkedin: req.body.linkedin,
-                github: req.body.github,
-                personal: req.body.personal
-            }
-        })
-        res.redirect(`/users/${user._id}`);
+                message: "Username taken"
+            })
+            console.log("this")
+
+        } else {
+            console.log("this")
+            const user = await UserModel.findByIdAndUpdate(req.user.id,{
+                details: {
+                    firstName: req.body.firstName,
+                    lastName: req.body.lastName,
+                    username: req.body.username,
+                    displayName: req.body.displayName,
+                    position: req.body.position,
+                    genres: req.body.genres.split(",").map(s => s.trim()),
+                    location: req.body.location,
+                    birthDate: req.body.birthdDate,
+                    bio: req.body.bio,
+                },
+                socialMedia: {
+                    twitter: req.body.twitter,
+                    instagram: req.body.instagram,
+                    facebook: req.body.facebook,
+                    youtube: req.body.youtube,
+                    twitch: req.body.twitch,
+                    linkedin: req.body.linkedin,
+                    github: req.body.github,
+                    personal: req.body.personal
+                }
+            })
+            res.redirect(`/users/${user._id}`);
+        }
     } else {
         res.redirect("/auth/login");
     }

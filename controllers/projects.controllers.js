@@ -31,7 +31,7 @@ async function submitCreateForm(req, res) {
             projectName: req.body.projectName,
             projectType: req.body.projectType,
             authorName: req.body.authorName,
-            authorId: req.user._id,
+            authorId: req.user.id,
             description: req.body.description,
             visibility: req.body.status,
             releaseDate: req.body.releaseDate,

@@ -1,0 +1,10 @@
+.card-img-a,
+.card-img {
+    object-fit: cover;
+    height: 100%;
+}
+
+.card-artist:hover,
+.card-genre:hover {
+    filter: brightness(50%);
+}

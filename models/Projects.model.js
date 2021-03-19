@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
-const genreSchema = require("./schemas/genres.model");
-const SocialMediaSchema = require("./schemas/socialmedia.model");
+// const genreSchema = require("./schemas/genres.model");
+// const SocialMediaSchema = require("./schemas/socialmedia.model");
 
 const detailSchema = new Schema({
     projectName: {
