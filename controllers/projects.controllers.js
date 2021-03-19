@@ -37,7 +37,7 @@ async function submitCreateForm(req, res) {
             releaseDate: req.body.releaseDate,
             genres: req.body.genres.replace("/,\s/g", ',').split(","),
             media: req.image,
-            videoUrl: req.videoUrl
+            videoUrl: req.body.videoUrl
         },
         contract: {
             capitalRequired: req.body.capitalRequired,
