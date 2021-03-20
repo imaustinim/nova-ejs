@@ -12,4 +12,3 @@ passport-google-oauth20 passport-facebook passport-twitter passport-twitch
 bootstrap-icons
 body-parser
 multer
-fuzzy-search

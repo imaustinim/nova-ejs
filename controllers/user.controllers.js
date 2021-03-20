@@ -50,7 +50,7 @@ async function showEdit(req, res) {
 
 async function submitEdit(req, res) {
     if (req.isAuthenticated()) {
-        const userbyUsername = await UserModel.findOne({ details: { username: req.body.username }})
+        const userbyUsername = await UserModel.findOne({ "details.username" : req.body.username })
         if (userbyUsername !== null && userbyUsername._id !== req.user.id) {
             res.render("users/edit", {
                 title: "Edit Profile",

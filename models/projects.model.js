@@ -3,7 +3,12 @@ const Schema = mongoose.Schema;
 // const genreSchema = require("./schemas/genres.model");
 // const SocialMediaSchema = require("./schemas/socialmedia.model");
 
-const detailSchema = new Schema({
+const detailsSchema = new Schema({
+    projectId: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     projectName: {
         type: String,
         required: true,
@@ -92,7 +97,7 @@ const statSchema = new Schema({
 })
 
 const projectsSchema = new Schema({
-    details: detailSchema,
+    details: detailsSchema,
     contract: contractSchema,
     // socialMedia: [SocialMediaSchema],
     // stats: [statSchema],

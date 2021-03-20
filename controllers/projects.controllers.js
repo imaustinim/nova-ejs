@@ -1,5 +1,4 @@
 const ProjectsModel = require("../models/projects.model")
-const multer = require("multer");
 
 async function show(req, res) {
     const loginStatus = req.isAuthenticated() ? "Logout" : "Login";
